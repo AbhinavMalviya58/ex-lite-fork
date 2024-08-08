@@ -1,10 +1,29 @@
 {
   "name": "ex-lite",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": "./dist/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aashishpanchal/ex-lite.git"
+  },
+  "homepage": "https://github.com/aashishpanchal/ex-lite#readme",
+  "keywords": [
+    "exp-lite",
+    "helper",
+    "express",
+    "nodejs",
+    "http-status",
+    "http-errors",
+    "error-handling",
+    "wrapper"
+  ],
+  "files": [
+    "dist/**"
+  ],
+  "author": "Aashish Panchal",
   "scripts": {
     "build": "tsc"
   },
