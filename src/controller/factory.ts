@@ -1,10 +1,18 @@
 import { wrapper } from "./wrapper";
-import { container } from "tsyringe";
 import { Constructor, ReqHandler } from "../interfaces";
 
 // Factory function to create controller handlers.
 export const controllerFactory = <T>(cls: Constructor<T>) => {
-  const instance: InstanceType<typeof cls> = container.resolve(cls);
+  let tsyringe: any = null;
+
+  try {
+    tsyringe = require("tsyringe");
+  } catch (error) {
+    console.log("tsyringe is not installed");
+    process.exit(1);
+  }
+
+  const instance: InstanceType<typeof cls> = tsyringe.container.resolve(cls);
 
   // Get a controller method as a handler.
   const getMethod = <K extends keyof T>(key: K): ReqHandler => {
